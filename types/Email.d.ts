@@ -7,7 +7,7 @@ declare global {
 		subject: string
 		text?: string
 		html?: string
-		attachments: {
+		attachments?: {
 			filename: string
 			path: string
 			cid?: string

@@ -4,9 +4,15 @@ export default defineNuxtConfig({
 	compatibilityDate: "2024-10-23",
 
 	runtimeConfig: {
-		MAILER_HOST: process.env.MAILER_HOST,
-		MAILER_PORT: process.env.MAILER_PORT,
-		MAILER_PASS: process.env.MAILER_PASS,
-		MAILER_USER: process.env.MAILER_USER,
+		MAILER_CONFIG: {
+			host: process.env.MAILER_HOST,
+			port: process.env.MAILER_PORT,
+			auth: {
+				pass: process.env.MAILER_PASS,
+				user: process.env.MAILER_USER,
+			},
+		},
 	},
+
+	extends: [["../base", { install: true }]],
 })

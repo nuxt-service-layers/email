@@ -1,5 +1,5 @@
-export {};
+export {}
 
 declare global {
-    interface Mailer {}
+	type MailerInstance = InstanceType<typeof Mailer>
 }
